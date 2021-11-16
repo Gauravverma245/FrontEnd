@@ -1,0 +1,34 @@
+
+.button {
+        background-color: black;
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        }
+
+#date{
+    align-items: center;
+    height: 50px;
+    width: 100px;
+    color: white;
+    background-color: black;
+    font-size: 16px;
+    }
+
+#myId{
+    font-size: 28px;
+    color: black;
+    font-style: bold;
+}
+
+#mydiv{
+    margin-left: 40%;
+    margin-top: 25%;
+}
+
