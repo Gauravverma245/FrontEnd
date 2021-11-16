@@ -7,7 +7,7 @@
     <title>Document</title>
     <style>
         .button {
-                background-color: #4CAF50;
+                background-color: black;
                 border: none;
                 color: white;
                 padding: 15px 32px;
@@ -23,14 +23,14 @@
             align-items: center;
             height: 50px;
             width: 100px;
-            color: yellow;
+            color: white;
             background-color: black;
             font-size: 16px;
             }
 
         #myId{
             font-size: 28px;
-            color: blue;
+            color: black;
             font-style: bold;
         }
 
@@ -41,8 +41,10 @@
       
     </style>
 </head>
-<body>
+<body style="background-color: lightpink;">
     <div id = "mydiv"> 
+        <h1>Day Name Finder</h1>
+        <p style="font-size: 20px;">Select Date from the calendar</p>
         <input type="date" id="date">
         <button onclick="date()" class="button">SUBMIT</button>
         <p id="myId"></p>
