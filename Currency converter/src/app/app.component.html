@@ -1,0 +1,8 @@
+<p>Use "INR" FOR  INR TO DOLLAR CONVERSION</p>
+<p>Use "Dollar" FOR  DOLLAR TO INR CONVERSION</p>
+
+Currency : <input type="text" [(ngModel)]= currency >
+Value : <input type="text" [(ngModel)]= value >
+
+<button (click)="onSubmit()"> submit </button>
+<p [innerHtml] = "result"></p>
