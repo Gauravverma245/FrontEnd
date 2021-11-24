@@ -1,5 +1,4 @@
-# Getting Started with Create React App
-This is a Currency Converter made with React.
+# This is a Currency Converter made with React.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
