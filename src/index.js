@@ -1,17 +1,66 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React, {useState} from 'react';
+import reactDom from 'react-dom';
+import axios from 'axios';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+const CurrencyConverter = () => {
+  const [first, setFirst] = useState("");
+  const [second, setSecond] = useState("");
+  const [rate, setRate] = useState("");
+
+
+  const getRate = (first, second) =>{
+    axios({
+      method: "GET",
+      url:
+      `https://free.currconv.com/api/v7/convert?q=${first}_${second}&compact=ultra&apiKey=85a397a4e122f3f6633f`
+    })
+    .then((response) =>{
+      console.log(response.data);
+      setRate(response.data);
+    })
+    .catch((error) =>{
+      console.log(error);
+    });
+  };
+
+  return (
+    <>
+    <h1 style= {{marginLeft: "38%"}}>Currency Converter</h1>
+      <div style= {{marginLeft: "33%"}}>
+        <div
+          style = {{
+            height: "40px",
+            width: "450px",
+            backgroundColor: "#94e5ff",
+            display: "flex",
+            justifyContent: "center",
+            fontSize: "25px",
+          }}
+          >
+            1{first} = {rate[`${first}_${second}`]} {second}
+        </div>
+        <br/>
+        <input type = "text" 
+        value = {first}
+        onChange = {(e) => setFirst(e.target.value)}
+        />
+        <input type = "text" 
+        value = {second}
+        onChange = {(e) => setSecond(e.target.value)}
+        />
+        <button
+        onClick = {() => {
+          getRate(first, second);
+        }}
+        >Convert
+        </button>
+      </div>
+    </>
+  )
+};
+
+
+reactDom.render(
+  <CurrencyConverter/>, document.getElementById('root')
+)
